@@ -3,3 +3,6 @@
 !.gitignore
 !astro.sh
 !install.sh
+!create-vite-ts.fish
+!create-astro.fish
+!install-fish-shell.sh
