@@ -1,6 +1,10 @@
 #!/bin/bash
 
+base_dir="/Volumes/JMicro 1TB/ProyectosAi/Github"
+
 read -p "Nombre de la carpeta: " nombre
+
+cd "$base_dir" || { echo "No se pudo acceder a '$base_dir'."; exit 1; }
 
 if [ -d "$nombre" ]; then
   echo "La carpeta '$nombre' ya existe."
@@ -54,7 +58,10 @@ export default defineConfig(({ mode }) => {
         node: prod ? 'production' : 'development', 
         publicDir: '../public',
         plugins: [],
-        server: { port: 3000 },
+        server: { 
+            port: 3000,
+            open: true
+        },
         build: {
             outDir: '../dist'
         },
